@@ -133,9 +133,6 @@ textarea:focus {
 .nav__item {
   margin-left: 30px;
 }
-.nav__link.active {
-  font-weight: bold;
-}
 
 .todo {
   border: 1px solid #e0e3e5;

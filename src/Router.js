@@ -11,7 +11,7 @@ function Router() {
 
         <div className="container">
           <Routes>
-            <Route path="/" exact element={<TodoList />} />
+            <Route path="/" element={<TodoList />} />
             <Route path="/create" element={<CreateTodo />} />
           </Routes>
         </div>

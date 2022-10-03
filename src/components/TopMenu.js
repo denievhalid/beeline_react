@@ -6,7 +6,7 @@ function TopMenu() {
     <nav className="nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <NavLink className="nav__link" exact="true" to="/">
+          <NavLink className="nav__link" to="/">
             Список задач
           </NavLink>
         </li>
