@@ -1,5 +1,6 @@
 import api from "../../api";
 import { TODO_FULFILLED, TODO_PENDING } from "../types";
+import { STORAGE_KEY } from "../../constants";
 
 const initialState = {
   loading: false,
@@ -29,12 +30,14 @@ export default function todosReducer(state = initialState, { type, payload }) {
 const fetchTodos = () => (dispatch) => {
   dispatch({ type: TODO_PENDING });
 
-  api("/users").then(({ data }) => {
+  try {
+    const todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
     dispatch({
       type: TODO_FULFILLED,
-      payload: data,
+      payload: todos,
     });
-  });
+  } catch (e) {}
 };
 
 export { fetchTodos };
